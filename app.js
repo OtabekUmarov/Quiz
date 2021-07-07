@@ -81,9 +81,6 @@ checkBtn.addEventListener('click', ()=> {
 })
 
 
-
-
-
 function show(array){
   document.querySelector('.quiz__count .allCount').innerHTML = '/ ' + chooseCount
   document.querySelector('.quiz__count .count').innerHTML = (count+1)

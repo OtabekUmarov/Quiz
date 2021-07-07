@@ -236,3 +236,11 @@ body {
 .choose__btn:hover {
   background-color: #057226;
 }
+@media (max-width: 576px) {
+  .wrap {
+    height: 100vh;
+    max-width: 576px;
+    padding-top: 50px;
+    border-radius: 0;
+  }
+}
