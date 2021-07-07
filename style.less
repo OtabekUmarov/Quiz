@@ -1,0 +1,222 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: 'i-l';
+  src: url(fonts/Inter-Light.ttf);
+}
+@font-face {
+  font-family: 'i-b';
+  src: url(fonts/Inter-Bold.ttf);
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #e7e7e7;
+  font-family: 'i-l',serif;
+}
+.wrap {
+  width: 600px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  position: relative;
+  min-height: 350px;
+}
+
+.quiz {
+  opacity: 0;
+  display: none;
+  transition: 0.3s;
+  &.active {
+    opacity: 1;
+    display: block;
+  }
+  &__question {
+    font-size: 20px;
+    font-family: 'i-b',serif;
+    margin-bottom: 20px;
+  }
+  &__count {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #e7e7e7;
+    padding-bottom: 10px;
+    font-family: 'i-b','serif';
+    margin-bottom: 10px;
+    .count {
+      color: #09b33c;
+    }
+  }
+  &__cat {
+    text-transform: capitalize;
+  }
+  input {
+    display: none;
+    &:checked {
+      &+label {
+        color: #09b33c;
+        &::before {
+          border-color: #09b33c;
+        }
+        &::after {
+          border-color: #09b33c;
+        }
+      }
+    }
+  }
+  &__input {
+    margin-bottom: 20px;
+    label {
+      position: relative;
+      padding-left: 25px;
+      display: flex;
+      align-items: center;
+      transition: color 0.3s;
+      cursor: pointer;
+      &::after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        left: 0;
+        width: 15px;
+        height: 15px;
+        border: 1px solid #e7e7e7;
+        border-radius: 50%;
+        transition: 0.3s;
+      }
+      &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: 4px;
+        left: 6px;
+        width: 4px;
+        height: 7px;
+        border-bottom: 2px solid #fff;
+        border-right: 2px solid #fff;
+        transform: rotate(45deg);
+        transition: 0.3s;
+      }
+    }
+  }
+  &__check {
+    display: block;
+    background-color: #09b33c;
+    width: 150px;
+    padding: 10px;
+    font-family: 'i-b',serif;
+    font-size: 18px;
+    margin: auto;
+    border: 0;
+    border-radius: 15px;
+    color: #fff;
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover {
+      background-color: #057226;
+    }
+  }
+}
+.result {
+  opacity: 0;
+  display: none;
+  transition: 0.3s;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-top: -20px;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  overflow: hidden;
+  &__item {
+    display: flex;
+    align-items: center;
+    font-family: 'i-b',serif;
+    padding: 15px;
+    border-bottom: 1px solid #e7e7e7;
+    &:first-child {
+      background-color: #47ec31;
+    }
+  }
+  &__title {
+    font-size: 18px;
+    width: 70%;
+    flex-basis: 70%;
+    max-width: 70%;
+  }
+  &.active {
+    opacity: 1;
+    display: block;
+  }
+}
+.choose {
+  opacity: 0;
+  display: none;
+  transition: 0.3s;
+  &.active {
+    opacity: 1;
+    display: block;
+  }
+  &__api {
+    font-size: 26px;
+    margin-bottom: 10px;
+    font-family: 'i-b',serif;
+  }
+  &__select {
+    margin-bottom: 15px;
+    position: relative;
+    .error {
+      position: absolute;
+      left: 25%;
+      bottom: -20px;
+      background-color: yellow;
+      padding: 6px;
+      width: auto;
+      font-size: 12px;
+      border-radius: 5px;
+      opacity: 0;
+      transition: 0.3s;
+      &.active {
+        opacity: 1;
+      }
+    }
+    p {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    select, input {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #e7e7e7;
+      border-radius: 15px;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  &__btn {
+    display: block;
+    width: 150px;
+    background-color: #09b33c;
+    padding: 10px;
+    font-family: 'i-b',serif;
+    color: #fff;
+    margin: auto;
+    border: 0;
+    border-radius: 15px;
+    transition: 0.3s;
+    &:hover {
+      background-color: #057226;
+    }
+  }
+}
