@@ -104,6 +104,11 @@ function show(array){
     i++
   });
 }
+let resBtn = document.querySelector('.result__btn')
+resBtn.addEventListener('click', ()=>{
+  result.classList.remove('active')
+  choose.classList.add('active')
+})
 
 function time(){
   setInterval(() => {
