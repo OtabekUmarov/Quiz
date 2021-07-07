@@ -50,7 +50,6 @@ apiBtn.addEventListener('click', ()=>{
   
   choose.classList.remove('active')
   quiz.classList.add('active')
-  document.querySelector('.quiz__cat').innerHTML = 'Category: '+chooseCat
   document.getElementById('resCat').innerHTML = chooseCat
 })
 
